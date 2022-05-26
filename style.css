@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    width: 90%;
+    border: 1px solid;
+    margin: auto;
+    padding: 20px;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 30px;
+}
+
+#budget{
+    width: 90%;
+    border: 2px solid green;
+    padding: 15px;
+    font-size: 22px;
+    height: 200px;
+}
+
+#budget form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#budget form input[type=number]{
+    margin: 15px 0px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 7px 10px;
+    font-size: 18px;
+}
+
+#budget form input[type=number]:focus{
+    outline: none;
+    box-shadow: 0px 0px 3px 2px #32ddf5;
+}
+
+#calculate{
+    border: 1px solid green;
+    background-color: #ffffff00;
+    padding: 6px 15px;
+    font-size: 16px;
+    color: green;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#calculate:hover{
+    color: rgb(24, 22, 22);
+    background-color: green;
+}
+
+#infocredit{
+    width: 90%;
+    border: 1px solid;
+    height: 200px;
+    margin: auto;
+}
+
+#expense{
+    width: 90%;
+    border: 1px solid;
+    height: 200px;
+}
+
+#list{
+    width: 90%;
+    border: 1px solid;
+    height: 200px;
+    margin: auto;
+}
+
