@@ -9,7 +9,6 @@ body{
 
 #container{
     width: 90%;
-    border: 1px solid;
     margin: auto;
     padding: 20px;
 }
@@ -20,22 +19,22 @@ section{
     row-gap: 30px;
 }
 
-#budget{
+#budgetform{
     width: 90%;
     border: 2px solid green;
     padding: 15px;
     font-size: 22px;
-    height: 200px;
+    height: 170px;
 }
 
-#budget form{
+#budgetform form{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-#budget form input[type=number]{
+#budgetform form input[type=number]{
     margin: 15px 0px;
     width: 100%;
     border-radius: 5px;
@@ -44,7 +43,7 @@ section{
     font-size: 18px;
 }
 
-#budget form input[type=number]:focus{
+#budgetform form input[type=number]:focus, #expensename:focus, #expenseamount:focus{
     outline: none;
     box-shadow: 0px 0px 3px 2px #32ddf5;
 }
@@ -60,27 +59,127 @@ section{
 }
 
 #calculate:hover{
-    color: rgb(24, 22, 22);
+    color: rgb(245, 245, 245);
     background-color: green;
 }
 
 #infocredit{
     width: 90%;
-    border: 1px solid;
     height: 200px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 35px;
 }
 
-#expense{
+#infocredit h6{
+    margin: 10px;
+}
+
+#infocredit i{
+    font-size: 50px;
+    color: #05668D;
+    margin: 20px;
+}
+
+#budget .output{
+    color: green;
+}
+
+#expenses .output{
+    color: rgb(199, 5, 5);
+}
+
+#infocredit span{
+    margin-right: 6px;
+}
+
+#expenseform{
     width: 90%;
-    border: 1px solid;
-    height: 200px;
+    border: 2px solid #c10202;
+    height: 250px;
+    padding: 15px;
+    font-size: 22px;
+}
+
+#expenseform form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#expensename, #expenseamount{
+    margin: 15px 0px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(145, 0, 0);
+    padding: 7px 10px;
+    font-size: 18px;
+}
+
+#addexpense{
+    border: 1px solid rgb(128, 0, 0);
+    background-color: #ffffff00;
+    padding: 6px 15px;
+    font-size: 16px;
+    color: rgb(128, 0, 0);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#addexpense:hover{
+    color: rgb(219, 219, 219);
+    background-color: rgb(231, 1, 1);
 }
 
 #list{
     width: 90%;
-    border: 1px solid;
-    height: 200px;
-    margin: auto;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.tablenames{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tablenames span{  
+    width: 130px;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.title{
+    color: rgb(189, 1, 1);
+}
+
+.value{
+    font-size: 22px;
+    color: rgb(189, 1, 1);
+}
+
+.value, .edit_delete{
+    width: 130px;
+    text-align: center;
+}
+
+.edit{
+    color: #05668D;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.delete{
+    color: rgb(189, 1, 1);
+    cursor: pointer;
 }
 

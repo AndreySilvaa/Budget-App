@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/698b380f29.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="container">
         <h1>Budget App</h1>
         <section>
-            <div id="budget">
+            <div id="budgetform">
                 <form action="">
                     <label for="">Please Enter Your Budget</label>
                     <input type="number">
@@ -20,15 +21,52 @@
             </div>
 
             <div id="infocredit">
-                
+                <div id="budget">
+                    <h6>BUDGET</h6>
+                    <div><i class="far fa-money-bill-alt"></i></div>
+                    <div class="output"><span>$</span><span id="valorbud">0</span></div>
+                </div>
+
+                <div id="expenses">
+                    <h6>EXPENSES</h6>
+                    <div><i class="far fa-credit-card"></i></i></div>
+                    <div class="output"><span>$</span><span id="valorexp">0</span></div>
+                </div>
+
+                <div id="balance">
+                    <h6>BALANCE</h6>
+                    <div><i class="fas fa-dollar-sign"></i></div>
+                    <div class="output"><span>$</span><span id="valorbal">0</span></div>
+                </div>
             </div>
 
-            <div id="expense">
-        
+            <div id="expenseform">
+                <form action="">
+                    <label for="expensename">Please Enter Your Expense</label>
+                    <input type="text" id="expensename">
+                    <label for="">Please Enter Expense Amount</label>
+                    <input type="number" id="expenseamount">
+                    <input type="button" value="Add Expense" id="addexpense">
+                </form>
             </div>
 
             <div id="list">
-        
+                <div class="tablenames">
+                    <span>Expense Title</span>
+                    <span>Expense Value</span>
+                    <span></span>
+                </div>
+
+                <div id="dvlist">
+                    <div class="product">
+                        <div class="title">- BUY COOKIES</div>
+                        <div class="value">$20</div>
+                        <div class="edit_delete">
+                            <i class="edit fas fa-edit"></i>
+                            <i class="delete fas fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
