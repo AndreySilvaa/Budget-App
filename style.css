@@ -24,7 +24,7 @@ section{
     border: 2px solid green;
     padding: 15px;
     font-size: 22px;
-    height: 170px;
+    height: fit-content;
 }
 
 #budgetform form{
@@ -32,6 +32,16 @@ section{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.feedbackbudget{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ff9696;
+    border-radius: 9px;
+    font-size: 17px;
+    color: darkred;
+    background-color: #ffb2b2;
 }
 
 #budgetform form input[type=number]{
@@ -98,7 +108,7 @@ section{
 #expenseform{
     width: 90%;
     border: 2px solid #c10202;
-    height: 250px;
+    height: fit-content;
     padding: 15px;
     font-size: 22px;
 }
@@ -160,6 +170,7 @@ section{
 
 .title{
     color: rgb(189, 1, 1);
+    width: 40%;
 }
 
 .value{
@@ -181,5 +192,9 @@ section{
 .delete{
     color: rgb(189, 1, 1);
     cursor: pointer;
+}
+
+.hidden{
+    display: none;
 }
 
