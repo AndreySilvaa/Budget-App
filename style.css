@@ -198,3 +198,46 @@ section{
     display: none;
 }
 
+@media screen and (max-width: 830px) {
+    #container{
+        margin: 0;
+    }
+
+    section{
+        grid-template-columns: auto;
+    }
+
+    #budgetform {
+        width: 70%;
+        font-size: 18px;
+    }
+
+    #infocredit {
+        width: 70%;
+        margin: 0;
+        font-size: 22px;
+        height: fit-content;
+    }
+
+    #infocredit i{
+        font-size: 40px;
+        margin: 16px;
+    }
+
+    #infocredit h6 {
+        margin: 6px;
+    }
+
+    #expenseform {
+        width: 70%;
+        font-size: 18px;
+    }
+
+    #list {
+        width: 90%;
+        height: fit-content;
+        text-align: center;
+        margin: 0; 
+        padding: 0;
+    }
+}

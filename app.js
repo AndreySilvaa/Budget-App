@@ -3,7 +3,7 @@
 // 3- criar um evento para pegar as informações do form expense e passar para o infocredit - OK
 // 4- Criar um novo objeto para cada item criado nas despesas de depois armanezar em um array - OK
 // 5- pegar as informações do form expense e criar um novo item dentro da div list - OK
-// 6- Manipular os itens edit/delete <--
+// 6- Manipular os itens edit/delete - OK
 
 function inicia(){
     const budgetinput = document.getElementById("budinput")
@@ -30,7 +30,7 @@ function inicia(){
             op.showfeedback(e)
         }else{
             op.infocredit(budgetvalue, "0", budgetvalue)
-            budgetinput.value = ''
+            op.clearFiels()
         }
     })
 
@@ -48,15 +48,26 @@ function inicia(){
             let item = new ITEM(nameitem, expensevalue, id)
             op.inserthtml(item)
             id++
-            expenseinput.value = ''
+            op.clearFiels()
             itenslist.push(item)
-            console.log(itenslist)
         }
     })
 
     // MANIPULANDO OS ITENS
 
-        ////
+    document.getElementById("dvlist").addEventListener("click", (e) =>{
+        let tiravalor = e.target.parentElement.previousElementSibling.innerText.slice(1)
+        if(e.target.classList.contains("delete")){ // BOTÃO DELETE
+            e.target.parentElement.parentElement.remove()
+            op.infocredit(budget, -tiravalor, budget)
+        }else if(e.target.classList.contains("edit")){ // BOTÃO EDIT
+            e.target.parentElement.parentElement.remove()
+            console.log(tiravalor)
+            op.infocredit(budget, -tiravalor, budget)
+            expenseinput.value = tiravalor
+            expensename.value = e.target.parentElement.previousElementSibling.previousElementSibling.innerText.slice(2)
+        }
+    })
 
     function OP(){
         OP.prototype.infocredit = function(bud, expen, balan){
@@ -67,6 +78,14 @@ function inicia(){
             budoutput.innerText = budget
             expoutput.innerText = expense
             baloutput.innerText = balan
+
+            if(balan > 0){
+                baloutput.style.color = "green"
+                baloutput.previousElementSibling.style.color = "green"
+            }else if(balan < 0){
+                baloutput.style.color = "red"
+                baloutput.previousElementSibling.style.color = "red"
+            }
         }
 
         OP.prototype.showfeedback = function(el){
@@ -77,8 +96,14 @@ function inicia(){
         }
 
         OP.prototype.inserthtml = function(item){
-            let dvlist = document.getElementById("dvlist")
+            const dvlist = document.getElementById("dvlist")
             dvlist.insertAdjacentHTML("beforeend", `<div class="product" data-id="${item.id}"><div class="title">- ${item.name}</div><div class="value">$${item.valor}</div><div class="edit_delete"><i class="edit fas fa-edit"></i><i class="delete fas fa-trash"></i></div></div>`)
+        }
+
+        OP.prototype.clearFiels = function(){
+            budgetinput.value = ''
+            expenseinput.value = ''
+            expensename.value = ''
         }
     }
 
